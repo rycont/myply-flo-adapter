@@ -128,10 +128,12 @@ export const generateURL = async (playlist: Playlist): Promise<string> => {
       chnlDesc: playlist.description,
       name: playlist.name,
       publishYn: "Y",
-      trackList: playlist.tracks.map((e) => ({
-        newYn: "Y",
-        trackId: e.channelIds.flo,
-      })),
+      trackList: playlist.tracks
+        .filter((e) => e.channelIds.flo)
+        .map((e) => ({
+          newYn: "Y",
+          trackId: e.channelIds.flo,
+        })),
     },
   });
 
