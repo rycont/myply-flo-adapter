@@ -12,6 +12,8 @@ const endpoints = {
   createPlaylist: () => "https://api.music-flo.com/personal/v2/myplaylist",
 };
 
+const converToBase64 = (str: string) => Buffer.from(str).toString("base64");
+
 const keyTable = ["d", "a", "n", "i", "e", "l", "z", "o", "h", "y"];
 
 function encrypt(e: number) {
@@ -103,7 +105,7 @@ export const getMasterToken = async (): Promise<string> => {
         signInType: "IDM",
       },
       headers: {
-        "x-gm-device-id": btoa(
+        "x-gm-device-id": converToBase64(
           (
             ((+new Date() / Math.random()) * Math.random()) %
             17100000001
