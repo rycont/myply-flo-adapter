@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@types/node": "^17.0.9",
+    "axios": "^0.24.0",
+    "myply-common": "https://github.com/rycont/myply-common"
+  },
+  "name": "myply-flo-adapter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rycont/myply-flo-adapter",
+  "author": "rycont <reactdev@kakao.com>",
+  "license": "MIT"
+}
